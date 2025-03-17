@@ -49,7 +49,32 @@ MathJax.Hub.Config({
           <h1 class="title is-1 publication-title">DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Paper #4144&nbsp;&nbsp;</span>
+              Youyu Chen$^{1,2}$&nbsp; 
+              Junjun Jiang$^{1†}$&nbsp;
+              Kui Jiang$^{1}$&nbsp;
+              Xiao Tang$^{2}$&nbsp;
+              Zhihao Li$^{2}$&nbsp;
+              Xianming Liu$^{1}$&nbsp;
+              Yinyu Nie$^{2}$&nbsp;
+            </span>
+          </div>
+          <!-- <div class="is-size-6 publication-authors">
+            <span class="author-block">
+              $^{1}$Artificial Intelligence and Image Analysis Lab, Harbin Institute of Technology&nbsp;
+              $^{2}$Noah's Ark Lab, Huawei&nbsp;
+            </span>
+          </div> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block", style="color:#726f6f"><sup>1</sup>Artificial Intelligence and Image Analysis Lab, Harbin Institute of Technology&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block", style="color:#726f6f"><sup>2</sup>Noah's Ark Lab, Huawei&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block", style="font-size: 15px;color:#726f6f">chenyouyu@stu.hit.edu.cn&nbsp;&nbsp;</span>
+            <span class="author-block", style="font-size: 15px;color:#726f6f">jiangjunjun@hit.edu.cn&nbsp;&nbsp;</span>
+            <span class="author-block", style="font-size: 15px;color:#726f6f">tangxiao12@huawei.com&nbsp;&nbsp;</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block", style="font-size: 15px;color:#726f6f"><sup>†&nbsp;</sup>Corresponding author </span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block", style="color:#367DBD";>CVPR 2025</span>
@@ -60,30 +85,31 @@ MathJax.Hub.Config({
   </div>
 </section>
 
+
 <section class="section">
   <div class="columns is-centered has-text-centered">
     <div class="column is-three-fifths">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-flowers">
-          <video poster="" id="flowers" autoplay controls muted loop playsinline width="80%">
+          <video poster="" id="flowers" autoplay controls muted loop playsinline width="90%">
             <source src="./static/videos/flowers.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-playroom">
-          <video poster="" id="playroom" autoplay controls muted loop playsinline width="80%">
+          <video poster="" id="playroom" autoplay controls muted loop playsinline width="90%">
             <source src="./static/videos/playroom.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-truck">
-          <video poster="" id="truck" autoplay controls muted loop playsinline width="89%">
+          <video poster="" id="truck" autoplay controls muted loop playsinline width="99%">
             <source src="./static/videos/truck.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-kitchen">
-          <video poster="" id="kitchen" autoplay controls muted loop playsinline width="79.5%">
+          <video poster="" id="kitchen" autoplay controls muted loop playsinline width="89.5%">
             <source src="./static/videos/kitchen.mp4"
                     type="video/mp4">
           </video>
@@ -116,20 +142,22 @@ MathJax.Hub.Config({
 <section class="section">
   <div class="columns is-centered has-text-centered">
     <div class="column is-three-fifths">
-      <h2 class="title is-3">Comparison With SOTA</h2>
+      <h2 class="title is-3">DashGaussian Improving SoTA</h2>
       <img alt="Architecture" src="./static/images/table1.png" width="100%"/>
     </div>
   </div>
+</section>
+<section>
   <div class="columns is-centered has-text-centered">
     <div class="column is-three-fifths">
-      <h2 class="title is-3">Acceleration to Backbones</h2>
+      <h2 class="title is-3">DashGaussian Enhancing Backbones</h2>
       <img alt="Architecture" src="./static/images/table2.png" width="100%"/>
     </div>
   </div>
 </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="columns is-centered has-text-centered">
     <div class="column is-three-fifths">
       <div id="results-carousel" class="carousel results-carousel">
@@ -158,7 +186,54 @@ MathJax.Hub.Config({
     </div>
   </div>
 </div>
+</section> -->
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="content">
+      <div class="columns is-centered">
+        <div class="column is-one-third">
+          <div class="video-compare-container" id="materialsDiv1">
+            <video class="video" id="materials1" loop playsinline autoPlay muted src="./static/videos/treehill_cat_x264.mp4" onplay="resizeAndPlay(this)"></video>
+            <canvas height=0 class="videoMerge" id="materials1Merge" style="border-radius: 10px;"></canvas>
+          </div>
+        </div>
+
+        <div class="column is-one-third">
+          <div class="video-compare-container" id="materialsDiv2">
+            <video class="video" id="materials2" loop playsinline autoPlay muted src="./static/videos/truck_cat_x264.mp4" onplay="resizeAndPlay(this)"></video>
+            <canvas height=0 class="videoMerge" id="materials2Merge" style="border-radius: 10px;"></canvas>
+          </div>
+        </div>
+
+        <div class="column is-one-third">
+          <div class="video-compare-container" id="materialsDiv3">
+            <video class="video" id="materials3" loop playsinline autoPlay muted src="./static/videos/garden_cat_x264.mp4" onplay="resizeAndPlay(this)"></video>
+            <canvas height=0 class="videoMerge" id="materials3Merge" style="border-radius: 10px;"></canvas>
+          </div>
+        </div>
+      </div>
+      <p class="subtitle has-text-centered">
+        Please click the videos for better view.
+      </p>
+    </div>
+  </div>
 </section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{lin2024vastgaussian,
+  title     = {VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction},
+  author    = {Lin, Jiaqi and Li, Zhihao and Tang, Xiao and Liu, Jianzhuang and Liu, Shiyong and Liu, Jiayue and Lu, Yangdi and Wu, Xiaofei and Xu, Songcen and Yan, Youliang and Yang, Wenming},
+  booktitle = {CVPR},
+  year      = {2024}
+}</code></pre>
+  </div>
+</section>
+
 
 <!-- <footer class="footer">
   <div class="container">
