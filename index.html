@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds">
+  <meta name="keywords" content="VastGaussian">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="./static/css/academicons.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/icon.png"> -->
+
+  <script src="./static/js/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>        
+  
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+});
+</script>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body", style="padding-bottom: 0rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Paper #4144&nbsp;&nbsp;</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block", style="color:#367DBD";>CVPR 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-three-fifths">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-flowers">
+          <video poster="" id="flowers" autoplay controls muted loop playsinline width="80%">
+            <source src="./static/videos/flowers.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-playroom">
+          <video poster="" id="playroom" autoplay controls muted loop playsinline width="80%">
+            <source src="./static/videos/playroom.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-truck">
+          <video poster="" id="truck" autoplay controls muted loop playsinline width="89%">
+            <source src="./static/videos/truck.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-kitchen">
+          <video poster="" id="kitchen" autoplay controls muted loop playsinline width="79.5%">
+            <source src="./static/videos/kitchen.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <p class="subtitle has-text-centered">
+        Please fullscreen the videos to view better. 
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        3D Gaussian Splatting (3DGS) renders pixels by rasterizing Gaussian primitives, where the rendering resolution and the primitive number, concluded as the optimization complexity, dominate the time cost in primitive optimization. In this paper, we propose DashGaussian, a scheduling scheme over the optimization complexity of 3DGS that strips redundant complexity to accelerate 3DGS optimization. Specifically, we formulate 3DGS optimization as progressively fitting 3DGS to higher levels of frequency components in the training views, and propose a dynamic rendering resolution scheme that largely reduces the optimization complexity based on this formulation. Besides, we argue that a specific rendering resolution should cooperate with a proper primitive number for a balance between computing redundancy and fitting quality, where we schedule the growth of the primitives to synchronize with the rendering resolution. Extensive experiments show that our method accelerates the optimization of various 3DGS backbones by 45.7% on average while preserving the rendering quality.
+      </p>
+    </div>
+  </section>
+
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-three-fifths">
+      <h2 class="title is-3">Comparison With SOTA</h2>
+      <img alt="Architecture" src="./static/images/table1.png" width="100%"/>
+    </div>
+  </div>
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-three-fifths">
+      <h2 class="title is-3">Acceleration to Backbones</h2>
+      <img alt="Architecture" src="./static/images/table2.png" width="100%"/>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-three-fifths">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-truck_swipe_text_x264">
+          <video poster="" id="truck_swipe_text_x264" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/truck_swipe_text_x264.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-treehill_swipe_text_x264">
+          <video poster="" id="treehill_swipe_text_x264" autoplay controls muted loop playsinline width="80%">
+            <source src="./static/videos/treehill_swipe_text_x264.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-playroom_swipe_text_x264">
+          <video poster="" id="playroom_swipe_text_x264" autoplay controls muted loop playsinline width="80%">
+            <source src="./static/videos/playroom_swipe_text_x264.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <p class="subtitle has-text-centered">
+        Please fullscreen the videos to view better. 
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            We thank the authors of <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> that kindly open sourced the template of this website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.video-compare-container').forEach(function (container, index) {
+      console.log("Index of the container:", index);
+      container.addEventListener('click', function () {
+        if (index === 0) {
+          this.classList.toggle('expand-right');
+        } else if (index === 2) {
+          this.classList.toggle('expand-left');
+        } else {
+          this.classList.toggle('expanded');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
