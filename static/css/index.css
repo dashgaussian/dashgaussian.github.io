@@ -247,3 +247,7 @@ body {
     overflow:hidden;
     display:block;
 }
+
+.tabs-widget > .tabs-content > div {
+  display: hidden;
+}

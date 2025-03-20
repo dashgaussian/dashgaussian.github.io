@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="description"
@@ -8,17 +9,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet"> -->
+  <link href="./static/css/googlefonts.css" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="./static/css/academicons.min.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <!-- <link rel="icon" href="./static/images/icon.png"> -->
 
   <script src="./static/js/jquery.min.js"></script>
@@ -58,14 +59,8 @@ MathJax.Hub.Config({
               Yinyu Nie$^{2}$&nbsp;
             </span>
           </div>
-          <!-- <div class="is-size-6 publication-authors">
-            <span class="author-block">
-              $^{1}$Artificial Intelligence and Image Analysis Lab, Harbin Institute of Technology&nbsp;
-              $^{2}$Noah's Ark Lab, Huawei&nbsp;
-            </span>
-          </div> -->
           <div class="is-size-5 publication-authors">
-            <span class="author-block", style="color:#726f6f"><sup>1</sup>Artificial Intelligence and Image Analysis Lab, Harbin Institute of Technology&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block", style="color:#726f6f"><sup>1</sup>Harbin Institute of Technology&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span class="author-block", style="color:#726f6f"><sup>2</sup>Noah's Ark Lab, Huawei&nbsp;&nbsp;&nbsp;&nbsp;</span>
           </div>
           <div class="is-size-5 publication-authors">
@@ -87,42 +82,347 @@ MathJax.Hub.Config({
 
 
 <section class="section">
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-three-fifths">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-flowers">
-          <video poster="" id="flowers" autoplay controls muted loop playsinline width="90%">
-            <source src="./static/videos/flowers.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-playroom">
-          <video poster="" id="playroom" autoplay controls muted loop playsinline width="90%">
-            <source src="./static/videos/playroom.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-truck">
-          <video poster="" id="truck" autoplay controls muted loop playsinline width="99%">
-            <source src="./static/videos/truck.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-kitchen">
-          <video poster="" id="kitchen" autoplay controls muted loop playsinline width="89.5%">
-            <source src="./static/videos/kitchen.mp4"
-                    type="video/mp4">
-          </video>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="columns is-four-fifths">
+        <div class="tabs-widget">
+          <h2 class="title is-4">Training Process Visualization</h2>
+          <p>
+            We visualize how DashGaussian accelerates the training process of different backbones below.
+          </p>
+          <br>
+          <div class="tabs is-centered">
+            <ul class="is-marginless">
+              <li><a>Taming-3DGS</a></li>
+              <li><a>3DGS</a></li>
+              <li><a>Mip-Splatting</a></li>
+            </ul>
+          </div>
+          <div class="tabs-content">
+            <!-- Begin Taming-3DGS -->
+            <div>
+              <div class="tabs-widget">
+                <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
+                  <ul class="is-marginless">
+                    <li><a>Train</a></li>
+                    <li><a>Truck</a></li>
+                    <li><a>Drjohnson</a></li>
+                    <li><a>Playroom</a></li>
+                    <li><a>Bicycle</a></li>
+                    <li><a>Garden</a></li>
+                    <li><a>Stump</a></li>
+                    <li><a>Flowers</a></li>
+                    <li><a>Treehill</a></li>
+                    <li><a>Room</a></li>
+                    <li><a>Kitchen</a></li>
+                    <li><a>Counter</a></li>
+                    <li><a>Bonsai</a></li>
+                  </ul>
+                </div>
+                <div class="content has-text-centered is-size-7-mobile">
+                  Fullscreen the videos to view better.
+                </div>
+                <div class="tabs-content">
+                  <div class="item item-comp-taming-train">
+                    <video poster="" id="id-comp-taming-train" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-train-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-truck">
+                    <video poster="" id="id-comp-taming-truck" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-truck-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-drjohnson">
+                    <video poster="" id="id-comp-taming-drjohnson" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-drjohnson-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-playroom">
+                    <video poster="" id="id-comp-taming-playroom" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-playroom-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-bicycle">
+                    <video poster="" id="id-comp-taming-bicycle" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-bicycle-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-garden">
+                    <video poster="" id="id-comp-taming-garden" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-garden-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-stump">
+                    <video poster="" id="id-comp-taming-stump" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-stump-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-flowers">
+                    <video poster="" id="id-comp-taming-flowers" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-flowers-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-treehill">
+                    <video poster="" id="id-comp-taming-treehill" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-treehill-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-room">
+                    <video poster="" id="id-comp-taming-room" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-room-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-kitchen">
+                    <video poster="" id="id-comp-taming-kitchen" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-kitchen-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-counter">
+                    <video poster="" id="id-comp-taming-counter" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-counter-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-bonsai">
+                    <video poster="" id="id-comp-taming-bonsai" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-bonsai-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Taming-3DGS -->
+            <!-- Begin 3DGS -->
+            <div>
+              <div class="tabs-widget">
+                <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
+                  <ul class="is-marginless">
+                    <li><a>Train</a></li>
+                    <li><a>Truck</a></li>
+                    <li><a>Drjohnson</a></li>
+                    <li><a>Playroom</a></li>
+                    <li><a>Bicycle</a></li>
+                    <li><a>Garden</a></li>
+                    <li><a>Stump</a></li>
+                    <li><a>Flowers</a></li>
+                    <li><a>Treehill</a></li>
+                    <li><a>Room</a></li>
+                    <li><a>Kitchen</a></li>
+                    <li><a>Counter</a></li>
+                    <li><a>Bonsai</a></li>
+                  </ul>
+                </div>
+                <div class="content has-text-centered is-size-7-mobile">
+                  Fullscreen the videos to view better.
+                </div>
+                <div class="tabs-content">
+                  <div class="item item-comp-3dgs-train">
+                    <video poster="" id="id-comp-3dgs-train" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-train-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-truck">
+                    <video poster="" id="id-comp-3dgs-truck" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-truck-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-drjohnson">
+                    <video poster="" id="id-comp-3dgs-drjohnson" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-drjohnson-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-playroom">
+                    <video poster="" id="id-comp-3dgs-playroom" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-playroom-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-bicycle">
+                    <video poster="" id="id-comp-3dgs-bicycle" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-bicycle-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-garden">
+                    <video poster="" id="id-comp-3dgs-garden" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-garden-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-stump">
+                    <video poster="" id="id-comp-3dgs-stump" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-stump-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-flowers">
+                    <video poster="" id="id-comp-3dgs-flowers" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-flowers-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-treehill">
+                    <video poster="" id="id-comp-3dgs-treehill" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-treehill-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-room">
+                    <video poster="" id="id-comp-3dgs-room" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-room-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-kitchen">
+                    <video poster="" id="id-comp-3dgs-kitchen" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-kitchen-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-counter">
+                    <video poster="" id="id-comp-3dgs-counter" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-counter-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-bonsai">
+                    <video poster="" id="id-comp-3dgs-bonsai" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-bonsai-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End 3DGS -->
+            <!-- Begin Mip-Splatting -->
+            <div>
+              <div class="tabs-widget">
+                <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
+                  <ul class="is-marginless">
+                    <li><a>Train</a></li>
+                    <li><a>Truck</a></li>
+                    <li><a>Drjohnson</a></li>
+                    <li><a>Playroom</a></li>
+                    <li><a>Bicycle</a></li>
+                    <li><a>Garden</a></li>
+                    <li><a>Stump</a></li>
+                    <li><a>Flowers</a></li>
+                    <li><a>Treehill</a></li>
+                    <li><a>Room</a></li>
+                    <li><a>Kitchen</a></li>
+                    <li><a>Counter</a></li>
+                    <li><a>Bonsai</a></li>
+                  </ul>
+                </div>
+                <div class="content has-text-centered is-size-7-mobile">
+                  Fullscreen the videos to view better.
+                </div>
+                <div class="tabs-content">
+                  <div class="item item-comp-mip-train">
+                    <video poster="" id="id-comp-mip-train" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-train-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-truck">
+                    <video poster="" id="id-comp-mip-truck" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-truck-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-drjohnson">
+                    <video poster="" id="id-comp-mip-drjohnson" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-drjohnson-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-playroom">
+                    <video poster="" id="id-comp-mip-playroom" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-playroom-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-bicycle">
+                    <video poster="" id="id-comp-mip-bicycle" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-bicycle-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-garden">
+                    <video poster="" id="id-comp-mip-garden" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-garden-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-stump">
+                    <video poster="" id="id-comp-mip-stump" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-stump-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-flowers">
+                    <video poster="" id="id-comp-mip-flowers" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-flowers-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-treehill">
+                    <video poster="" id="id-comp-mip-treehill" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-treehill-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-room">
+                    <video poster="" id="id-comp-mip-room" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-room-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-kitchen">
+                    <video poster="" id="id-comp-mip-kitchen" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-kitchen-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-counter">
+                    <video poster="" id="id-comp-mip-counter" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-counter-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-bonsai">
+                    <video poster="" id="id-comp-mip-bonsai" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-bonsai-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Mip-Splatting -->
+          </div>
         </div>
       </div>
-      <p class="subtitle has-text-centered">
-        Please fullscreen the videos to view better. 
-      </p>
     </div>
   </div>
-</div>
 </section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -133,10 +433,11 @@ MathJax.Hub.Config({
     </div>
     <div class="content has-text-justified">
       <p>
-        3D Gaussian Splatting (3DGS) renders pixels by rasterizing Gaussian primitives, where the rendering resolution and the primitive number, concluded as the optimization complexity, dominate the time cost in primitive optimization. In this paper, we propose DashGaussian, a scheduling scheme over the optimization complexity of 3DGS that strips redundant complexity to accelerate 3DGS optimization. Specifically, we formulate 3DGS optimization as progressively fitting 3DGS to higher levels of frequency components in the training views, and propose a dynamic rendering resolution scheme that largely reduces the optimization complexity based on this formulation. Besides, we argue that a specific rendering resolution should cooperate with a proper primitive number for a balance between computing redundancy and fitting quality, where we schedule the growth of the primitives to synchronize with the rendering resolution. Extensive experiments show that our method accelerates the optimization of various 3DGS backbones by 45.7% on average while preserving the rendering quality.
+        3D Gaussian Splatting (3DGS) renders pixels by rasterizing Gaussian primitives, where the rendering resolution and the primitive number, concluded as the optimization complexity, dominate the time cost in primitive optimization. In this paper, we propose DashGaussian, a scheduling scheme over the optimization complexity of 3DGS that strips redundant complexity to accelerate 3DGS optimization. Specifically, we formulate 3DGS optimization as progressively fitting 3DGS to higher levels of frequency components in the training views, and propose a dynamic rendering resolution scheme that largely reduces the optimization complexity based on this formulation. Besides, we argue that a specific rendering resolution should cooperate with a proper primitive number for a balance between computing redundancy and fitting quality, where we schedule the growth of the primitives to synchronize with the rendering resolution. Extensive experiments show that, being easily intergrated as a plug-and-play module, our method accelerates the optimization of various 3DGS backbones by 45.7% on average while preserving the rendering quality.
       </p>
     </div>
-  </section>
+  </div>
+</section>
 
 
 <section class="section">
@@ -157,37 +458,6 @@ MathJax.Hub.Config({
 </div>
 </section>
 
-<!-- <section class="section">
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-three-fifths">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-truck_swipe_text_x264">
-          <video poster="" id="truck_swipe_text_x264" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/truck_swipe_text_x264.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-treehill_swipe_text_x264">
-          <video poster="" id="treehill_swipe_text_x264" autoplay controls muted loop playsinline width="80%">
-            <source src="./static/videos/treehill_swipe_text_x264.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-playroom_swipe_text_x264">
-          <video poster="" id="playroom_swipe_text_x264" autoplay controls muted loop playsinline width="80%">
-            <source src="./static/videos/playroom_swipe_text_x264.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <p class="subtitle has-text-centered">
-        Please fullscreen the videos to view better. 
-      </p>
-    </div>
-  </div>
-</div>
-</section> -->
-
 
 <section class="hero is-light is-small">
   <div class="hero-body">
@@ -195,21 +465,21 @@ MathJax.Hub.Config({
       <div class="columns is-centered">
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv1">
-            <video class="video" id="materials1" loop playsinline autoPlay muted src="./static/videos/treehill_cat_x264.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials1" loop playsinline autoPlay muted src="./static/videos/treehill_cat_720p_text_batch.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials1Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv2">
-            <video class="video" id="materials2" loop playsinline autoPlay muted src="./static/videos/truck_cat_x264.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials2" loop playsinline autoPlay muted src="./static/videos/truck_cat_720p_text_batch.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials2Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
 
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv3">
-            <video class="video" id="materials3" loop playsinline autoPlay muted src="./static/videos/garden_cat_x264.mp4" onplay="resizeAndPlay(this)"></video>
+            <video class="video" id="materials3" loop playsinline autoPlay muted src="./static/videos/garden_cat_720p_text_batch.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials3Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
@@ -252,8 +522,6 @@ MathJax.Hub.Config({
   </div>
 </footer> -->
 
-
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.video-compare-container').forEach(function (container, index) {
@@ -269,6 +537,57 @@ MathJax.Hub.Config({
       });
     });
   });
+
+  const duration=3000
+  function setupVideo(videoId, pauseDuration) {
+    const video = document.getElementById(videoId);
+    video.addEventListener('ended', function() {
+      setTimeout(function() {
+        video.currentTime = 0; // 重置视频
+        video.play(); // 重新播放
+      }, pauseDuration);
+    });
+    // video.play(); // 开始播放
+  }
+  setupVideo('id-comp-taming-train', duration);
+  setupVideo('id-comp-taming-truck', duration);
+  setupVideo('id-comp-taming-drjohnson', duration);
+  setupVideo('id-comp-taming-playroom', duration);
+  setupVideo('id-comp-taming-bicycle', duration);
+  setupVideo('id-comp-taming-garden', duration);
+  setupVideo('id-comp-taming-stump', duration);
+  setupVideo('id-comp-taming-flowers', duration);
+  setupVideo('id-comp-taming-treehill', duration);
+  setupVideo('id-comp-taming-room', duration);
+  setupVideo('id-comp-taming-kitchen', duration);
+  setupVideo('id-comp-taming-counter', duration);
+  setupVideo('id-comp-taming-bonsai', duration);
+  setupVideo('id-comp-3dgs-train', duration);
+  setupVideo('id-comp-3dgs-truck', duration);
+  setupVideo('id-comp-3dgs-drjohnson', duration);
+  setupVideo('id-comp-3dgs-playroom', duration);
+  setupVideo('id-comp-3dgs-bicycle', duration);
+  setupVideo('id-comp-3dgs-garden', duration);
+  setupVideo('id-comp-3dgs-stump', duration);
+  setupVideo('id-comp-3dgs-flowers', duration);
+  setupVideo('id-comp-3dgs-treehill', duration);
+  setupVideo('id-comp-3dgs-room', duration);
+  setupVideo('id-comp-3dgs-kitchen', duration);
+  setupVideo('id-comp-3dgs-counter', duration);
+  setupVideo('id-comp-3dgs-bonsai', duration);
+  setupVideo('id-comp-mip-train', duration);
+  setupVideo('id-comp-mip-truck', duration);
+  setupVideo('id-comp-mip-drjohnson', duration);
+  setupVideo('id-comp-mip-playroom', duration);
+  setupVideo('id-comp-mip-bicycle', duration);
+  setupVideo('id-comp-mip-garden', duration);
+  setupVideo('id-comp-mip-stump', duration);
+  setupVideo('id-comp-mip-flowers', duration);
+  setupVideo('id-comp-mip-treehill', duration);
+  setupVideo('id-comp-mip-room', duration);
+  setupVideo('id-comp-mip-kitchen', duration);
+  setupVideo('id-comp-mip-counter', duration);
+  setupVideo('id-comp-mip-bonsai', duration);
 </script>
 
 </body>

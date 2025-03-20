@@ -1,25 +1,5 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
-// var INTERP_BASE = "./static/interpolation/stacked";
-// var NUM_INTERP_FRAMES = 240;
-
-// var interp_images = [];
-// function preloadInterpolationImages() {
-//   for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
-//     var path = INTERP_BASE + '/' + String(i).padStart(6, '0') + '.jpg';
-//     interp_images[i] = new Image();
-//     interp_images[i].src = path;
-//   }
-// }
-
-// function setInterpolationImage(i) {
-//   var image = interp_images[i];
-//   image.ondragstart = function() { return false; };
-//   image.oncontextmenu = function() { return false; };
-//   $('#interpolation-image-wrapper').empty().append(image);
-// }
-
-
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
     $(".navbar-burger").click(function() {
@@ -59,21 +39,52 @@ $(document).ready(function() {
     	});
     }
 
-    /*var player = document.getElementById('interpolation-video');
-    player.addEventListener('loadedmetadata', function() {
-      $('#interpolation-slider').on('input', function(event) {
-        console.log(this.value, player.duration);
-        player.currentTime = player.duration / 100 * this.value;
-      })
-    }, false);*/
-    preloadInterpolationImages();
-
-    $('#interpolation-slider').on('input', function(event) {
-      setInterpolationImage(this.value);
-    });
-    setInterpolationImage(0);
-    $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
-
     bulmaSlider.attach();
 
-})
+    $('.tabs-widget').each(function() {
+      const containerElement = $(this);
+      tabsWidget = new TabsWidget(containerElement);
+    });
+
+  })
+
+class TabsWidget {
+  constructor(container) {
+    this.container = container;
+    this.activeIndex = 0;
+    this.listItems = container.children('.tabs').children('ul').children('li');
+    let self = this;
+    this.listItems.click(function (e) {
+      let index = $(this).index();
+      self.update($(this), index);
+    })
+
+    this.update(this.listItems[this.activeIndex], this.activeIndex);
+  }
+
+  update(element, targetIndex) {
+    this.activeIndex = targetIndex;
+    const tabs = this.container.children('.tabs');
+    const tabsContent = this.container.children('.tabs-content');
+    this.listItems.each(function () {
+      if ($(this).index() == targetIndex) {
+        $(this).addClass('is-active');
+      } else {
+        $(this).removeClass('is-active');
+      }
+    });
+    tabsContent.children().each(function () {
+      if ($(this).index() == targetIndex) {
+        $(this).show();
+        $(this).find('*').each(function () {
+          if ($(this).is(':visible')) {
+            $(this).trigger('tab:show');
+          }
+        })
+      } else {
+        $(this).hide();
+        $(this).find('*').trigger('tab:hide');
+      }
+    });
+  }
+}
