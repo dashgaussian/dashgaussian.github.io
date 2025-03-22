@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="description"
         content="DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds">
-  <meta name="keywords" content="VastGaussian">
+  <meta name="keywords" content="DashGaussian">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds</title>
 
@@ -50,7 +50,7 @@ MathJax.Hub.Config({
           <h1 class="title is-1 publication-title">DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Youyu Chen$^{1,2}$&nbsp; 
+              Youyu Chen$^{1\#}$&nbsp; 
               Junjun Jiang$^{1†}$&nbsp;
               Kui Jiang$^{1}$&nbsp;
               Xiao Tang$^{2}$&nbsp;
@@ -69,26 +69,63 @@ MathJax.Hub.Config({
             <span class="author-block", style="font-size: 15px;color:#726f6f">tangxiao12@huawei.com&nbsp;&nbsp;</span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block", style="font-size: 15px;color:#726f6f"><sup>†&nbsp;</sup>Corresponding author </span>
+            <span class="author-block", style="font-size: 15px;color:#726f6f"><sup>†&nbsp;</sup>Corresponding author&nbsp;&nbsp; <sup>#</sup> This work was done during he was an intern at Huawei. </span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block", style="color:#367DBD";>CVPR 2025</span>
           </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+            </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">What is DashGaussian?</h2>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        DashGaussian is a plug-and-play 3DGS training acceleration method which smartly allocates the computational complexity over the optimization process. 
+        DashGaussian reduces the training time-cost by 45.7% on average over various datasets and different backbones, while preserving and even improving the rendering quality.
+      </p>
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="columns is-four-fifths">
         <div class="tabs-widget">
-          <h2 class="title is-4">Training Process Visualization</h2>
+          <h2 class="title is-3">Training Process Visualization</h2>
           <p>
-            We visualize how DashGaussian accelerates the training process of different backbones below.
+            We demonstrate how DashGaussian accelerates the training process of different backbones on various scenes.
           </p>
           <br>
           <div class="tabs is-centered">
@@ -104,52 +141,48 @@ MathJax.Hub.Config({
               <div class="tabs-widget">
                 <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
                   <ul class="is-marginless">
-                    <li><a>Train</a></li>
                     <li><a>Truck</a></li>
-                    <li><a>Drjohnson</a></li>
-                    <li><a>Playroom</a></li>
-                    <li><a>Bicycle</a></li>
+                    <li><a>Train</a></li>
+                    <li><a>Treehill</a></li>
+                    <li><a>Flowers</a></li>
                     <li><a>Garden</a></li>
                     <li><a>Stump</a></li>
-                    <li><a>Flowers</a></li>
-                    <li><a>Treehill</a></li>
+                    <li><a>Bicycle</a></li>
                     <li><a>Room</a></li>
                     <li><a>Kitchen</a></li>
                     <li><a>Counter</a></li>
                     <li><a>Bonsai</a></li>
+                    <li><a>Drjohnson</a></li>
+                    <li><a>Playroom</a></li>
                   </ul>
                 </div>
                 <div class="content has-text-centered is-size-7-mobile">
+                  'Ours' denotes enhancing the backbone (Taming-3DGS) with DashGaussian. 
+                  <br>
                   Fullscreen the videos to view better.
                 </div>
                 <div class="tabs-content">
-                  <div class="item item-comp-taming-train">
-                    <video poster="" id="id-comp-taming-train" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_taming/taming-train-comp-text_batch.mp4"
-                              type="video/mp4">
-                    </video>
-                  </div>
                   <div class="item item-comp-taming-truck">
                     <video poster="" id="id-comp-taming-truck" autoplay controls muted playsinline width="100%">
                       <source src="./static/videos/cmp_taming/taming-truck-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-taming-drjohnson">
-                    <video poster="" id="id-comp-taming-drjohnson" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_taming/taming-drjohnson-comp-text_batch.mp4"
+                  <div class="item item-comp-taming-train">
+                    <video poster="" id="id-comp-taming-train" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-train-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-taming-playroom">
-                    <video poster="" id="id-comp-taming-playroom" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_taming/taming-playroom-comp-text_batch.mp4"
+                  <div class="item item-comp-taming-treehill">
+                    <video poster="" id="id-comp-taming-treehill" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-treehill-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-taming-bicycle">
-                    <video poster="" id="id-comp-taming-bicycle" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_taming/taming-bicycle-comp-text_batch.mp4"
+                  <div class="item item-comp-taming-flowers">
+                    <video poster="" id="id-comp-taming-flowers" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-flowers-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
@@ -165,15 +198,9 @@ MathJax.Hub.Config({
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-taming-flowers">
-                    <video poster="" id="id-comp-taming-flowers" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_taming/taming-flowers-comp-text_batch.mp4"
-                              type="video/mp4">
-                    </video>
-                  </div>
-                  <div class="item item-comp-taming-treehill">
-                    <video poster="" id="id-comp-taming-treehill" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_taming/taming-treehill-comp-text_batch.mp4"
+                  <div class="item item-comp-taming-bicycle">
+                    <video poster="" id="id-comp-taming-bicycle" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-bicycle-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
@@ -201,6 +228,18 @@ MathJax.Hub.Config({
                               type="video/mp4">
                     </video>
                   </div>
+                  <div class="item item-comp-taming-drjohnson">
+                    <video poster="" id="id-comp-taming-drjohnson" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-drjohnson-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-taming-playroom">
+                    <video poster="" id="id-comp-taming-playroom" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_taming/taming-playroom-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
                 </div>
               </div>
             </div>
@@ -210,52 +249,48 @@ MathJax.Hub.Config({
               <div class="tabs-widget">
                 <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
                   <ul class="is-marginless">
-                    <li><a>Train</a></li>
                     <li><a>Truck</a></li>
-                    <li><a>Drjohnson</a></li>
-                    <li><a>Playroom</a></li>
-                    <li><a>Bicycle</a></li>
+                    <li><a>Train</a></li>
+                    <li><a>Treehill</a></li>
+                    <li><a>Flowers</a></li>
                     <li><a>Garden</a></li>
                     <li><a>Stump</a></li>
-                    <li><a>Flowers</a></li>
-                    <li><a>Treehill</a></li>
+                    <li><a>Bicycle</a></li>
                     <li><a>Room</a></li>
                     <li><a>Kitchen</a></li>
                     <li><a>Counter</a></li>
                     <li><a>Bonsai</a></li>
+                    <li><a>Drjohnson</a></li>
+                    <li><a>Playroom</a></li>
                   </ul>
                 </div>
                 <div class="content has-text-centered is-size-7-mobile">
+                  'Ours' denotes enhancing the backbone (3DGS) with DashGaussian. 
+                  <br>
                   Fullscreen the videos to view better.
                 </div>
                 <div class="tabs-content">
-                  <div class="item item-comp-3dgs-train">
-                    <video poster="" id="id-comp-3dgs-train" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_3dgs/3dgs-train-comp-text_batch.mp4"
-                              type="video/mp4">
-                    </video>
-                  </div>
                   <div class="item item-comp-3dgs-truck">
                     <video poster="" id="id-comp-3dgs-truck" autoplay controls muted playsinline width="100%">
                       <source src="./static/videos/cmp_3dgs/3dgs-truck-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-3dgs-drjohnson">
-                    <video poster="" id="id-comp-3dgs-drjohnson" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_3dgs/3dgs-drjohnson-comp-text_batch.mp4"
+                  <div class="item item-comp-3dgs-train">
+                    <video poster="" id="id-comp-3dgs-train" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-train-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-3dgs-playroom">
-                    <video poster="" id="id-comp-3dgs-playroom" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_3dgs/3dgs-playroom-comp-text_batch.mp4"
+                  <div class="item item-comp-3dgs-treehill">
+                    <video poster="" id="id-comp-3dgs-treehill" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-treehill-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-3dgs-bicycle">
-                    <video poster="" id="id-comp-3dgs-bicycle" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_3dgs/3dgs-bicycle-comp-text_batch.mp4"
+                  <div class="item item-comp-3dgs-flowers">
+                    <video poster="" id="id-comp-3dgs-flowers" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-flowers-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
@@ -271,15 +306,9 @@ MathJax.Hub.Config({
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-3dgs-flowers">
-                    <video poster="" id="id-comp-3dgs-flowers" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_3dgs/3dgs-flowers-comp-text_batch.mp4"
-                              type="video/mp4">
-                    </video>
-                  </div>
-                  <div class="item item-comp-3dgs-treehill">
-                    <video poster="" id="id-comp-3dgs-treehill" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_3dgs/3dgs-treehill-comp-text_batch.mp4"
+                  <div class="item item-comp-3dgs-bicycle">
+                    <video poster="" id="id-comp-3dgs-bicycle" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-bicycle-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
@@ -307,6 +336,18 @@ MathJax.Hub.Config({
                               type="video/mp4">
                     </video>
                   </div>
+                  <div class="item item-comp-3dgs-drjohnson">
+                    <video poster="" id="id-comp-3dgs-drjohnson" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-drjohnson-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-3dgs-playroom">
+                    <video poster="" id="id-comp-3dgs-playroom" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_3dgs/3dgs-playroom-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
                 </div>
               </div>
             </div>
@@ -316,52 +357,48 @@ MathJax.Hub.Config({
               <div class="tabs-widget">
                 <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
                   <ul class="is-marginless">
-                    <li><a>Train</a></li>
                     <li><a>Truck</a></li>
-                    <li><a>Drjohnson</a></li>
-                    <li><a>Playroom</a></li>
-                    <li><a>Bicycle</a></li>
+                    <li><a>Train</a></li>
+                    <li><a>Treehill</a></li>
+                    <li><a>Flowers</a></li>
                     <li><a>Garden</a></li>
                     <li><a>Stump</a></li>
-                    <li><a>Flowers</a></li>
-                    <li><a>Treehill</a></li>
+                    <li><a>Bicycle</a></li>
                     <li><a>Room</a></li>
                     <li><a>Kitchen</a></li>
                     <li><a>Counter</a></li>
                     <li><a>Bonsai</a></li>
+                    <li><a>Drjohnson</a></li>
+                    <li><a>Playroom</a></li>
                   </ul>
                 </div>
                 <div class="content has-text-centered is-size-7-mobile">
+                  'Ours' denotes enhancing the backbone (Mip-Splatting) with DashGaussian. 
+                  <br>
                   Fullscreen the videos to view better.
                 </div>
                 <div class="tabs-content">
-                  <div class="item item-comp-mip-train">
-                    <video poster="" id="id-comp-mip-train" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_mip/mip-train-comp-text_batch.mp4"
-                              type="video/mp4">
-                    </video>
-                  </div>
                   <div class="item item-comp-mip-truck">
                     <video poster="" id="id-comp-mip-truck" autoplay controls muted playsinline width="100%">
                       <source src="./static/videos/cmp_mip/mip-truck-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-mip-drjohnson">
-                    <video poster="" id="id-comp-mip-drjohnson" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_mip/mip-drjohnson-comp-text_batch.mp4"
+                  <div class="item item-comp-mip-train">
+                    <video poster="" id="id-comp-mip-train" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-train-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-mip-playroom">
-                    <video poster="" id="id-comp-mip-playroom" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_mip/mip-playroom-comp-text_batch.mp4"
+                  <div class="item item-comp-mip-treehill">
+                    <video poster="" id="id-comp-mip-treehill" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-treehill-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-mip-bicycle">
-                    <video poster="" id="id-comp-mip-bicycle" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_mip/mip-bicycle-comp-text_batch.mp4"
+                  <div class="item item-comp-mip-flowers">
+                    <video poster="" id="id-comp-mip-flowers" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-flowers-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
@@ -377,15 +414,9 @@ MathJax.Hub.Config({
                               type="video/mp4">
                     </video>
                   </div>
-                  <div class="item item-comp-mip-flowers">
-                    <video poster="" id="id-comp-mip-flowers" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_mip/mip-flowers-comp-text_batch.mp4"
-                              type="video/mp4">
-                    </video>
-                  </div>
-                  <div class="item item-comp-mip-treehill">
-                    <video poster="" id="id-comp-mip-treehill" autoplay controls muted playsinline width="100%">
-                      <source src="./static/videos/cmp_mip/mip-treehill-comp-text_batch.mp4"
+                  <div class="item item-comp-mip-bicycle">
+                    <video poster="" id="id-comp-mip-bicycle" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-bicycle-comp-text_batch.mp4"
                               type="video/mp4">
                     </video>
                   </div>
@@ -413,6 +444,18 @@ MathJax.Hub.Config({
                               type="video/mp4">
                     </video>
                   </div>
+                  <div class="item item-comp-mip-drjohnson">
+                    <video poster="" id="id-comp-mip-drjohnson" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-drjohnson-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-comp-mip-playroom">
+                    <video poster="" id="id-comp-mip-playroom" autoplay controls muted playsinline width="100%">
+                      <source src="./static/videos/cmp_mip/mip-playroom-comp-text_batch.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
                 </div>
               </div>
             </div>
@@ -425,58 +468,26 @@ MathJax.Hub.Config({
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-      </div>
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        3D Gaussian Splatting (3DGS) renders pixels by rasterizing Gaussian primitives, where the rendering resolution and the primitive number, concluded as the optimization complexity, dominate the time cost in primitive optimization. In this paper, we propose DashGaussian, a scheduling scheme over the optimization complexity of 3DGS that strips redundant complexity to accelerate 3DGS optimization. Specifically, we formulate 3DGS optimization as progressively fitting 3DGS to higher levels of frequency components in the training views, and propose a dynamic rendering resolution scheme that largely reduces the optimization complexity based on this formulation. Besides, we argue that a specific rendering resolution should cooperate with a proper primitive number for a balance between computing redundancy and fitting quality, where we schedule the growth of the primitives to synchronize with the rendering resolution. Extensive experiments show that, being easily intergrated as a plug-and-play module, our method accelerates the optimization of various 3DGS backbones by 45.7% on average while preserving the rendering quality.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-three-fifths">
-      <h2 class="title is-3">DashGaussian Improving SoTA</h2>
-      <img alt="Architecture" src="./static/images/table1.png" width="100%"/>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-three-fifths">
-      <h2 class="title is-3">DashGaussian Enhancing Backbones</h2>
-      <img alt="Architecture" src="./static/images/table2.png" width="100%"/>
-    </div>
-  </div>
-</div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
+  <section class="container">
     <div class="content">
-      <div class="columns is-centered">
+      <p class="title is-3 has-text-centered">
+        Tour over the Optimized Scene
+      </p>
+      <div class="columns is-centered has-text-centered">
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv1">
             <video class="video" id="materials1" loop playsinline autoPlay muted src="./static/videos/treehill_cat_720p_text_batch.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials1Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
-
+  
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv2">
             <video class="video" id="materials2" loop playsinline autoPlay muted src="./static/videos/truck_cat_720p_text_batch.mp4" onplay="resizeAndPlay(this)"></video>
             <canvas height=0 class="videoMerge" id="materials2Merge" style="border-radius: 10px;"></canvas>
           </div>
         </div>
-
+  
         <div class="column is-one-third">
           <div class="video-compare-container" id="materialsDiv3">
             <video class="video" id="materials3" loop playsinline autoPlay muted src="./static/videos/garden_cat_720p_text_batch.mp4" onplay="resizeAndPlay(this)"></video>
@@ -485,21 +496,90 @@ MathJax.Hub.Config({
         </div>
       </div>
       <p class="subtitle has-text-centered">
-        Please click the videos for better view.
+        Please click the videos to fullscreen for better view.
+      </p>
+    </div>
+  </section>
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        3D Gaussian Splatting (3DGS) renders pixels by rasterizing Gaussian primuitives, where the rendering resolution and the primitive number, conclded as the optimization complexity, dominate the time cost in primitive optimization. In this paper, we propose DashGaussian, a scheduling scheme over the optimization complexity of 3DGS that strips redundant complexity to accelerate 3DGS optimization. Specifically, we formulate 3DGS optimization as progressively fitting 3DGS to higher levels of frequency components in the training views, and propose a dynamic rendering resolution scheme that largely reduces the optimization complexity based on this formulation. Besides, we argue that a specific rendering resolution should cooperate with a proper primitive number for a balance between computing redundancy and fitting quality, where we schedule the growth of the primitives to synchronize with the rendering resolution. Extensive experiments show that, being easily intergrated as a plug-and-play module, our method accelerates the optimization of various 3DGS backbones by 45.7% on average while preserving the rendering quality.
+      </p>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Pipeline</h2>
+        <img alt="Architecture" src="./static/images/pipeline.png" width="100%"/>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        DashGaussian determines the rendering resolution for each 3DGS optimization step with our resolution scheduling method. 
+        The insight of the resolution scheduling is to gradually fit 3DGS to higher level of frequency components in the training views throughout the entire optimization process. 
+        By directing the downsampling of training views with our scheduler, we significantly reduce the time cost for 3DGS optimization while preserving the rendering quality. 
+        We further manage the growth of Gaussian primitives, which cooperates with the scheduled rendering resolution. It prevents possible over-densification issues during the low-resolution optimization phase and further accelerates the optimization with suppressed primitive growth. 
       </p>
     </div>
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">DashGaussian Improving SOTA</h2>
+        <div class="content has-text-justified">
+          Quantitative comparisons with existing 3DGS fast optimization methods. 
+          With DashGaussian, we finish 3DGS optimization within 200 seconds while achieving significantly higher rendering quality compared with the other methods. 
+          ``Ours'' in the table reports the performance of equipping DashGaussian to Taming-3DGS.
+          Time is reported in minutes. 
+        </div>
+        <img alt="Architecture" src="./static/images/table1-notext.png" width="100%"/>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">DashGaussian Enhancing Backbones</h2>
+        <div class="content has-text-justified">
+          Quantitative results of accelerating various 3DGS backbones using DashGaussian. 
+          Plugging DashGaussian into different backbones, their optimization speed is largely improved by 45.7% on average. 
+          Most prominently, DashGaussian achieves acceleration with negligible compromise and even improvement in the rendering quality. 
+          The results advocate that a reasonable computational resource allocation across the optimization process can largely boost the optimization while preserving the rendering quality. 
+          ''Revising-3DGS*'' denotes our reproduction of the paper based on the Taming-3DGS codebase. 
+          Time is reported in minutes. 
+        </div>
+        <img alt="Architecture" src="./static/images/table2-notext.png" width="100%"/>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{lin2024vastgaussian,
-  title     = {VastGaussian: Vast 3D Gaussians for Large Scene Reconstruction},
-  author    = {Lin, Jiaqi and Li, Zhihao and Tang, Xiao and Liu, Jianzhuang and Liu, Shiyong and Liu, Jiayue and Lu, Yangdi and Wu, Xiaofei and Xu, Songcen and Yan, Youliang and Yang, Wenming},
+    <pre><code>@inproceedings{chen2025dashgaussian,
+  title     = {DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds.},
+  author    = {Chen, Youyu and Jiang, Junjun and Jiang, Kui and Tang, Xiao and Li, Zhihao and Liu, Xianming and Nie, Yinyu},
   booktitle = {CVPR},
-  year      = {2024}
+  year      = {2025}
 }</code></pre>
   </div>
 </section>
