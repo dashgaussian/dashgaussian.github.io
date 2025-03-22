@@ -46,6 +46,8 @@ $(document).ready(function() {
       tabsWidget = new TabsWidget(containerElement);
     });
 
+    document.getElementsByTagName("html")[0].style.visibility = "visible";
+
   })
 
 class TabsWidget {

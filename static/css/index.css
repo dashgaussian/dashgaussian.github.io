@@ -251,3 +251,5 @@ body {
 .tabs-widget > .tabs-content > div {
   display: hidden;
 }
+
+html { visibility:hidden; }
