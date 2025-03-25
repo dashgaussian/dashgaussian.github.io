@@ -502,22 +502,6 @@ MathJax.Hub.Config({
   </section>
 </section>
 
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-      </div>
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        3D Gaussian Splatting (3DGS) renders pixels by rasterizing Gaussian primuitives, where the rendering resolution and the primitive number, conclded as the optimization complexity, dominate the time cost in primitive optimization. In this paper, we propose DashGaussian, a scheduling scheme over the optimization complexity of 3DGS that strips redundant complexity to accelerate 3DGS optimization. Specifically, we formulate 3DGS optimization as progressively fitting 3DGS to higher levels of frequency components in the training views, and propose a dynamic rendering resolution scheme that largely reduces the optimization complexity based on this formulation. Besides, we argue that a specific rendering resolution should cooperate with a proper primitive number for a balance between computing redundancy and fitting quality, where we schedule the growth of the primitives to synchronize with the rendering resolution. Extensive experiments show that, being easily intergrated as a plug-and-play module, our method accelerates the optimization of various 3DGS backbones by 45.7% on average while preserving the rendering quality.
-      </p>
-    </div>
-  </div>
-</section> -->
-
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -575,14 +559,12 @@ MathJax.Hub.Config({
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>
-@inproceedings{chen2025dashgaussian,
+<pre><code>@inproceedings{chen2025dashgaussian,
   title     = {DashGaussian: Optimizing 3D Gaussian Splatting in 200 Seconds},
   author    = {Chen, Youyu and Jiang, Junjun and Jiang, Kui and Tang, Xiao and Li, Zhihao and Liu, Xianming and Nie, Yinyu},
   booktitle = {CVPR},
   year      = {2025}
-}
-    </code></pre>
+}</code></pre>
   </div>
 </section>
 
